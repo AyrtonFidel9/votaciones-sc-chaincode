@@ -1,0 +1,46 @@
+{
+  "name": "votaciones-token-erc20",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha --recursive",
+    "mocha": "mocha --recursive",
+    "start": "fabric-chaincode-node start"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=5"
+  },
+  "author": "Ayrton",
+  "license": "ISC",
+  "dependencies": {
+    "fabric-contract-api": "^2.5.2",
+    "fabric-shim": "^2.5.2"
+  },
+  "description": "This is a smart contract to create a ERC20 TOKEN and it'll deploy in Hyperledger Fabric",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^15.0.4"
+  },
+  "nyc": {
+    "exclude": [
+      "coverage/**",
+      "test/**",
+      "index.js",
+      "node_modules"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "all": true,
+    "check-coverage": false,
+    "statements": 100,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100
+  }
+}
